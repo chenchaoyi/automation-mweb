@@ -1,0 +1,10 @@
+{
+  "name": "mweb_auto",
+  "version": "0.0.1",
+  "description": "mweb automation with appium and nodejs",
+  "dependencies": {
+    "mocha": "~1.17.1",
+    "selenium-webdriver": "~2.40.0",
+    "wd": "~0.2.10"
+  }
+}
