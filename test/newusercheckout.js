@@ -27,7 +27,7 @@ test.describe('new user checkout', function() {
 
   test.it('ship regular item to store', function() {
     pages.Home().openHomePage();
-    pages.Home().searchForItemId('5172339');
+    pages.Header().searchForItemId('5172339');
     pages.Item().addToCart();
     pages.Cart().checkout();
     pages.SignIn().createAccount();
@@ -42,7 +42,7 @@ test.describe('new user checkout', function() {
 
   test.it('ship regular item to home', function() {
     pages.Home().openHomePage();
-    pages.Home().searchForItemId('5172339');
+    pages.Header().searchForItemId('5172339');
     pages.Item().addToCart();
     pages.Cart().checkout();
     pages.SignIn().createAccount();
@@ -57,7 +57,7 @@ test.describe('new user checkout', function() {
   test.it('ship variant item to home', function() {
 
     pages.Home().openHomePage();
-    pages.Home().searchForItemId('24796478');
+    pages.Header().searchForItemId('24796478');
     //pages.Item().selectVariants();
     pages.Item().addToCart();
     pages.Cart().checkout();

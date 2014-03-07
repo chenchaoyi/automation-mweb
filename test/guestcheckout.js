@@ -26,7 +26,7 @@ test.describe('guest checkout', function() {
 
   test.it('ship regular item to store', function() {
     pages.Home().openHomePage();
-    pages.Home().searchForItemId('5172339');
+    pages.Header().searchForItemId('5172339');
     pages.Item().addToCart();
     pages.Cart().checkout();
     pages.SignIn().clickContinueAsGuest();
@@ -42,7 +42,7 @@ test.describe('guest checkout', function() {
 
   test.it('ship regular item to home', function() {
     pages.Home().openHomePage();
-    pages.Home().searchForItemId('5172339');
+    pages.Header().searchForItemId('5172339');
     pages.Item().addToCart();
     pages.Cart().checkout();
     pages.SignIn().clickContinueAsGuest();
@@ -57,7 +57,7 @@ test.describe('guest checkout', function() {
 
   test.it('native ship regular item to home', function() {
     pages.Home().openHomePage();
-    pages.Home().searchForItemId('5172339');
+    pages.Header().searchForItemId('5172339');
     pages.Item().addToCart();
     pages.Cart().checkout();
     pages.SignIn().clickContinueAsGuestNative();

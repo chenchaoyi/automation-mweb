@@ -2,6 +2,7 @@
 Walmart Mobile mWeb Automation Test Framework
 
 ## Installation ##
+* Install ChromeDriver  ```brew install chromedriver``` or download [here](http://chromedriver.storage.googleapis.com/index.html)  and add it to your PATH 
 * Install [Node.js >= v0.10.25 and npm](http://nodejs.org/)
 * Install all node package dependencies:
 
@@ -16,7 +17,7 @@ $ npm install
 
 ```bash
 # run all tests
-$ mocha
+$ ./node_modules/.bin/mocha
 # run single test suite
-$ mocha test/guestcheckout.js
+$ ./node_modules/.bin/mocha test/guestcheckout.js
 ```

@@ -16,15 +16,46 @@ test.describe('browse test', function() {
     browser.close();
   });
 
-  test.it('browse by department', function() {
+  test.it('browse by department and sort', function() {
     pages.Home().openHomePage();
     pages.Home().shopByDepartment();
     pages.Browse().clickDepartment('Baby');
+
     pages.Browse().clickDepartment('Cribs');
+    pages.ShelfList().getCrumb().then(function(selectedText){
+      assert.equal(selectedText, 'Cribs');
+    });
+
     pages.ShelfList().sortByTopRated();
+    pages.ShelfList().isSortedByTopRated().then(function(selectedText){
+      assert.equal(selectedText, 'true');
+    });
     pages.ShelfList().sortByBestsellers();
+    pages.ShelfList().isSortedByTopRated().then(function(selectedText){
+      assert.notEqual(selectedText, 'true');
+    });
+    pages.ShelfList().isSortedByBestsellers().then(function(selectedText){
+      assert.equal(selectedText, 'true');
+    });
     pages.ShelfList().sortByPrice();
     pages.ShelfList().sortByPrice();
+  });
+
+
+ test.it('browse by department and filter', function() {
+    pages.Home().openHomePage();
+    pages.Home().shopByDepartment();
+    pages.Browse().clickDepartment('Baby');
+
+    pages.Browse().clickDepartment('Cribs');
+    pages.ShelfList().getCrumb().then(function(selectedText){
+      assert.equal(selectedText, 'Cribs');
+    });
+
+    pages.ShelfList().applyFilter('Shop by Finish', 'Black');
+    pages.ShelfList().filtered().then(function(filtered){
+      assert.equal(filtered, true);
+    });
   });
 
 

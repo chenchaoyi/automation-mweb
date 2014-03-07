@@ -18,7 +18,7 @@ test.describe('existing user checkout', function() {
 
   test.it('ship regular item to store', function() {
     pages.Home().openHomePage();
-    pages.Home().searchForItemId('5172339');
+    pages.Header().searchForItemId('5172339');
     pages.Item().addToCart();
     pages.Cart().checkout();
     pages.SignIn().login('walmartmobile+20140224_142707@walmart.com', 'mobile123');
@@ -32,7 +32,7 @@ test.describe('existing user checkout', function() {
                         message: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ac dignissim tortor, ut mollis nibh. Aliquam vitae ornare risus. Nam hendrerit nisi id luctus vehicula. Duis eu diam arcu. Fusce metus.'}
 
     pages.Home().openHomePage();
-    pages.Home().searchForItemId('3223392');
+    pages.Header().searchForItemId('3223392');
     pages.Item().customizeEGiftCardAndAddToCart(giftCardInfo);
     pages.Cart().checkout();
     pages.SignIn().login('walmartmobile+20140224_142707@walmart.com', 'mobile123');
@@ -40,4 +40,3 @@ test.describe('existing user checkout', function() {
   });
 
 });
-
