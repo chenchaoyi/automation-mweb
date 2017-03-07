@@ -13,7 +13,7 @@ $ npm install
 
 ## Usage ##
 
-* Run with [mocha](http://visionmedia.github.io/mocha/):
+* Run with [mocha](http://mochajs.org/):
 
 ```bash
 # run all tests
